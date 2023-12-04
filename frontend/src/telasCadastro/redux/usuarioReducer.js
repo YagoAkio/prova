@@ -75,14 +75,14 @@ export const adicionarUsuario = createAsyncThunk('usuario/adicionar', async (usu
             return {
                 status: dados.status,
                 mensagem: 'Ocorreu um erro ao adicionar o usuário.',
-                usuario: dados // ou ajuste conforme necessário
+                usuario: dados
             };
         }
     } catch (erro) {
         return {
             status: false,
             mensagem: 'Ocorreu um erro ao adicionar o usuário: ' + erro.message,
-            usuario: {} // ou ajuste conforme necessário
+            usuario: {} 
         };
     }
 });
@@ -107,20 +107,20 @@ export const atualizarUsuario = createAsyncThunk('usuario/atualizar', async (usu
             return {
                 status: dados.status,
                 mensagem: 'Usuário atualizado com sucesso!',
-                usuario: dados // ou ajuste conforme necessário
+                usuario: dados 
             };
         } else {
             return {
                 status: dados.status,
                 mensagem: 'Ocorreu um erro ao atualizar o usuário.',
-                usuario: dados // ou ajuste conforme necessário
+                usuario: dados
             };
         }
     } catch (erro) {
         return {
             status: false,
             mensagem: 'Ocorreu um erro ao atualizar o usuário: ' + erro.message,
-            usuario: {} // ou ajuste conforme necessário
+            usuario: {} 
         };
     }
 });
