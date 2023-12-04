@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import ESTADO from '../recursos/estado';
-import { buscarMensagens } from './msgSlice'; // Importe a action assíncrona correspondente
+import { buscarMensagens } from './mensagemSlice';
 const urlBase = 'https://backend-bcc-2-b.vercel.app/usuario';
 
 export const buscarUsuarios = createAsyncThunk('usuario/buscarUsuarios', async (_, { dispatch }) => {
@@ -18,7 +18,7 @@ export const buscarUsuarios = createAsyncThunk('usuario/buscarUsuarios', async (
                         nickname: usuario.nickname,
                         urlAvatar: usuario.urlAvatar,
                         dataIngresso: usuario.dataIngresso,
-                        mensagens: mensagensResponse.payload.listaMensagens.filter(msg => msg.usuario.id === usuario.id)
+                        mensagens: mensagensResponse.payload.listaMensagens.filter(mensagem => mensagem.usuario.id === usuario.id)
                     };
                 });
 
